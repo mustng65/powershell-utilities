@@ -7,27 +7,6 @@ param (
     $Path
 )
 
-# $fullFileName = Get-ItemProperty $Path
-
-# $fullFileName.DirectoryName
-
-# $folder = $fullFileName.DirectoryName
-# $filter = $fullFileName.FullName
-
-# $Watcher = New-Object IO.FileSystemWatcher $folder, $filter -Property @{ 
-#     IncludeSubdirectories = $false
-#     NotifyFilter          = [IO.NotifyFilters]'Filename,LastWrite'
-# }
-# $onCreated = Register-ObjectEvent $Watcher -EventName Changed -SourceIdentifier FileCreated -Action {
-#     $path = $Event.SourceEventArgs.FullPath
-#     $name = $Event.SourceEventArgs.Name
-#     $changeType = $Event.SourceEventArgs.ChangeType
-#     $timeStamp = $Event.TimeGenerated
-#     Write-Host "The file '$name' was $changeType at $timeStamp"
-#     Write-Host $path
-# }
-
-
 $Action = 'Write-Output "The watched file was changed"'
 $global:FileChanged = $false
 
